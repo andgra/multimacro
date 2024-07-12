@@ -1,0 +1,17 @@
+## Interface: 60200
+## Title: MultiMacro
+## Notes: Parses the multiple spells macros and sets the correct icon/info for them.
+## SavedVariables: MultiMacroDB
+## Author: andgra
+## Version: 0.0.1
+## X-Curse-Packaged-Version: v0.0.1
+## X-Curse-Project-Name: MultiMacro
+## X-Curse-Project-ID: MultiMacro
+## X-Curse-Repository-ID: wow/MultiMacro/mainline
+## X-Curse-Packaged-Version: v0.0.1
+## X-Curse-Project-Name: MultiMacro
+## X-Curse-Project-ID: multimacro
+## X-Curse-Repository-ID: wow/multimacro/mainline
+
+MultiMacro.lua
+Parser.lua
