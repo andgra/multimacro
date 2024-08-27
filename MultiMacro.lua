@@ -105,10 +105,6 @@ function MultiMacro:UNIT_SPELLCAST_SUCCEEDED(event, unit)
   self:UpdateMacros()
 end
 
-function MultiMacro:PlayerHasSpell(spell)
-  return select(1, GetSpellInfo(spell)) ~= nil
-end
-
 local function GetAbilityData(ability)
     local slotId = tonumber(ability)
 
@@ -121,7 +117,14 @@ local function GetAbilityData(ability)
             return "unknown", nil, nil
         end
     else
-        local spellName, _, _, _, _, _, spellId = GetSpellInfo(ability)
+		local spellInfo = C_Spell.GetSpellInfo(ability)
+        local spellName, spellId
+
+        if spellInfo then
+            spellName = spellInfo.name
+            spellId = spellInfo.spellID
+        end
+
         if spellId then
             return "spell", spellId, spellName
         end
