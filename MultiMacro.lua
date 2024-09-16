@@ -123,7 +123,13 @@ local function GetAbilityData(ability)
         if spellInfo then
             spellName = spellInfo.name
             spellId = spellInfo.spellID
-        end
+        else
+			local itemId = C_Item.GetItemIDForItemInfo(ability)
+			local itemName = C_Item.GetItemNameByID(itemId)
+			if itemId and itemName then
+				return "item", itemId, itemName
+			end
+		end
 
         if spellId then
             return "spell", spellId, spellName
